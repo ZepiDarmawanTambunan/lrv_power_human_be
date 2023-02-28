@@ -1,0 +1,14 @@
+- migration dan model
+- linked to database
+- storage link
+- setup jetstream
+  composer require laravel/jetstream
+  karena pada project ini hanya rest api alias tidak pakai inertia atau pun livewire maka kita cukup jalankan
+  php artisan jetstream:install livewire
+  npm install && npm run dev
+  php artisan migrate
+- setelah setelah setup jetstream bisa ke localhost lihat akan ada fitur login dan register
+- untuk custom jetstream perlu jalankan: php artisan vendor:publish --tag=jetstream-views
+- karena di migration company kita pakai softDeletes maka kita perlu use softDeletes di Model nya
+- insert data dengan cara ::create. wajib atur fillable
+- hidden pada model itu data data yg dak perlu ditampilkan
