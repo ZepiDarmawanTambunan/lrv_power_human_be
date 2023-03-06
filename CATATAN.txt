@@ -12,3 +12,4 @@
 - karena di migration company kita pakai softDeletes maka kita perlu use softDeletes di Model nya
 - insert data dengan cara ::create. wajib atur fillable
 - hidden pada model itu data data yg dak perlu ditampilkan
+- fortify.php -> feature twoFactorAuthentication di hapus
