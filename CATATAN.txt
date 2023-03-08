@@ -1,3 +1,5 @@
+- composer ... instal laravel
+- npm run build // utk handle vite
 - migration dan model
 - linked to database
 - storage link
@@ -13,3 +15,9 @@
 - insert data dengan cara ::create. wajib atur fillable
 - hidden pada model itu data data yg dak perlu ditampilkan
 - fortify.php -> feature twoFactorAuthentication di hapus
+
+SESI 8
+- terkadang pada saat consume api, ada sebuah result berupa code html maka untuk mengatasi nya kita set diheader pada postman
+dan pada saat fetch api dengan menambahkan: Accept: application/json
+- bearer kalau dipostman diletakan diauthorization.
+- bearer token disimpan di cookie jika difront end seperti nextjs, react atau state global
