@@ -1,0 +1,1151 @@
+{
+	"info": {
+		"_postman_id": "7a4e43e1-add4-45ae-8b6f-4fe3f59fda8c",
+		"name": "lrv_power_human",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10059094"
+	},
+	"item": [
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "Create Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "company 2",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/D:/0001.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}company",
+							"host": [
+								"{{API_URL}}company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All & ID Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}company",
+							"host": [
+								"{{API_URL}}company"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "12",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "pt",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|LSHaYFv3o139TK761CxX554lr6O5yFd6EBJ68U6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "company 1",
+									"type": "text"
+								},
+								{
+									"key": "logo",
+									"type": "file",
+									"src": "/D:/Azure AI Fundamentals.jpg"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}company/update/42",
+							"host": [
+								"{{API_URL}}company"
+							],
+							"path": [
+								"update",
+								"42"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team",
+			"item": [
+				{
+					"name": "Create Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "team 3",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/D:/TES1.png"
+								},
+								{
+									"key": "company_id",
+									"value": "42",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}team",
+							"host": [
+								"{{API_URL}}team"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}team?name=team&company_id=42",
+							"host": [
+								"{{API_URL}}team"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "team"
+								},
+								{
+									"key": "company_id",
+									"value": "42"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|LSHaYFv3o139TK761CxX554lr6O5yFd6EBJ68U6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "team",
+									"type": "text"
+								},
+								{
+									"key": "icon",
+									"type": "file",
+									"src": "/D:/0001.jpg"
+								},
+								{
+									"key": "company_id",
+									"value": "42",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}team/update/258",
+							"host": [
+								"{{API_URL}}team"
+							],
+							"path": [
+								"update",
+								"258"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Team",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|LSHaYFv3o139TK761CxX554lr6O5yFd6EBJ68U6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}team/258",
+							"host": [
+								"{{API_URL}}team"
+							],
+							"path": [
+								"258"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "Create Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "team 3",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "employee1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "MALE",
+									"type": "text"
+								},
+								{
+									"key": "age",
+									"value": "18",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "082112121211",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/D:/0001.jpg"
+								},
+								{
+									"key": "team_id",
+									"value": "256",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "51",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}employee",
+							"host": [
+								"{{API_URL}}employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}employee",
+							"host": [
+								"{{API_URL}}employee"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Caterina Kilback",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "predovic.penelope@example.com",
+									"disabled": true
+								},
+								{
+									"key": "team_id",
+									"value": "42",
+									"disabled": true
+								},
+								{
+									"key": "role_id",
+									"value": "30",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "with_teams",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "with_roles",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "employee1",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "employee1@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "MALE",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "age",
+									"value": "18",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "phone",
+									"value": "082112121211",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/D:/0001.jpg",
+									"disabled": true
+								},
+								{
+									"key": "team_id",
+									"value": "256",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "51",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}employee/update/1001",
+							"host": [
+								"{{API_URL}}employee"
+							],
+							"path": [
+								"update",
+								"1001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|LSHaYFv3o139TK761CxX554lr6O5yFd6EBJ68U6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}employee/1001",
+							"host": [
+								"{{API_URL}}employee"
+							],
+							"path": [
+								"1001"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Create Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "role 4",
+									"type": "text"
+								},
+								{
+									"key": "company_id",
+									"value": "42",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}role",
+							"host": [
+								"{{API_URL}}role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}role?name=role&company_id=42",
+							"host": [
+								"{{API_URL}}role"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "role"
+								},
+								{
+									"key": "company_id",
+									"value": "42"
+								},
+								{
+									"key": "with_responsibilites",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|LSHaYFv3o139TK761CxX554lr6O5yFd6EBJ68U6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "role terakhir",
+									"type": "text"
+								},
+								{
+									"key": "company_id",
+									"value": "42",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}role/update/54",
+							"host": [
+								"{{API_URL}}role"
+							],
+							"path": [
+								"update",
+								"54"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|LSHaYFv3o139TK761CxX554lr6O5yFd6EBJ68U6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}role/54",
+							"host": [
+								"{{API_URL}}role"
+							],
+							"path": [
+								"54"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Responsibility",
+			"item": [
+				{
+					"name": "Create Responsibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "responsibility 4",
+									"type": "text"
+								},
+								{
+									"key": "role_id",
+									"value": "51",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}responsibility",
+							"host": [
+								"{{API_URL}}responsibility"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Responsibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{API_URL}}responsibility?name=responsibility&role_id=51",
+							"host": [
+								"{{API_URL}}responsibility"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "responsibility"
+								},
+								{
+									"key": "role_id",
+									"value": "51"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Responsibility",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "9|LSHaYFv3o139TK761CxX554lr6O5yFd6EBJ68U6o",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}responsibility/204",
+							"host": [
+								"{{API_URL}}responsibility"
+							],
+							"path": [
+								"204"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "zepi darmawan",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "zefidarmawan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "jambi1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}register",
+							"host": [
+								"{{API_URL}}register"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "zefidarmawan@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "jambi1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{API_URL}}login",
+							"host": [
+								"{{API_URL}}login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|8CB1k4pPOBuoMMWkOz8sUqrEDSOWNfsYeGas4LiX",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}logout",
+							"host": [
+								"{{API_URL}}logout"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "10|dQO7v9vUcXYMxcuMHNWlTyeTgQd34FDKoDdKurnt",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{API_URL}}user",
+							"host": [
+								"{{API_URL}}user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

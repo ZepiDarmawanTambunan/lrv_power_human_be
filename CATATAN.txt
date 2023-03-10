@@ -21,3 +21,7 @@ SESI 8
 dan pada saat fetch api dengan menambahkan: Accept: application/json
 - bearer kalau dipostman diletakan diauthorization.
 - bearer token disimpan di cookie jika difront end seperti nextjs, react atau state global
+
+SESI 9 - 11
+- CRUD
+- export file collections postman
