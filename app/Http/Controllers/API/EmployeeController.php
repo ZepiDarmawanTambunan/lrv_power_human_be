@@ -20,14 +20,15 @@ class EmployeeController extends Controller
             $email = $request->input('email');
             $role_id = $request->input('role_id');
             $team_id = $request->input('team_id');
+            $company_id = $request->input('company_id');
             $limit = $request->input('limit', 10);
-            $with_teams = $request->input('with_teams', false);
-            $with_roles = $request->input('with_roles', false);
+            // $with_teams = $request->input('with_teams', false);
+            // $with_roles = $request->input('with_roles', false);
 
-            $employeesQuery = Employee::query();
+            $employeesQuery = Employee::with(['team', 'role']);
             // powerhuman.com/api/employee?id=1
             if ($id) {
-                $employee = $employeesQuery->with(['team', 'role'])->findOrFail($id);
+                $employee = $employeesQuery->findOrFail($id);
                 if ($employee) {
                     return ResponseFormatter::success($employee, 'Employee found');
                 }
@@ -54,13 +55,19 @@ class EmployeeController extends Controller
                 $employees->where('role_id', $role_id);
             }
 
-            if ($with_roles) {
-                $employees->with('role');
+            if ($company_id) {
+                $employees->whereHas('team', function ($query) use ($company_id){
+                    $query->where('company_id', $company_id);
+                });
             }
 
-            if ($with_teams) {
-                $employees->with('team');
-            }
+            // if ($with_roles) {
+            //     $employees->with('role');
+            // }
+
+            // if ($with_teams) {
+            //     $employees->with('team');
+            // }
 
             return ResponseFormatter::success(
                 $employees->paginate($limit),
@@ -76,7 +83,11 @@ class EmployeeController extends Controller
         try {
             $requestData = $request->validated();
             if ($request->hasFile('photo')) {
-                $requestData['photo'] = $request->file('photo')->store('public/photos');
+                // cara ini yg benar
+                $file = $request->file('photo');
+                $fileName = time() . '_' . $file->getClientOriginalName();
+                $filePath = $file->storeAs('public/photos', $fileName);
+                $requestData['photo'] = $fileName;
             }
             $employee = Employee::create($requestData);
             if (!$employee) {

@@ -20,7 +20,7 @@ class RoleController extends Controller
             $limit = $request->input('limit', 10);
             $with_responsibilities = $request->input('with_responsibilities', false);
 
-            $rolesQuery = Role::query();
+            $rolesQuery = Role::withCount('responsibilities');
             // powerhuman.com/api/role?id=1
             if ($id) {
                 $role = $rolesQuery->with('responsibilities')->findOrFail($id);

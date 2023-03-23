@@ -19,7 +19,7 @@ class TeamController extends Controller
             $name = $request->input('name');
             $limit = $request->input('limit', 10);
 
-            $teamsQuery = Team::query();
+            $teamsQuery = Team::withCount('employees');
             // powerhuman.com/api/team?id=1
             if ($id) {
                 $team = $teamsQuery->findOrFail($id);
