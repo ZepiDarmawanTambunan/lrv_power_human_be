@@ -21,9 +21,9 @@ class CompanyController extends Controller
             $name = $request->input('name');
             $limit = $request->input('limit', 10);
 
-            $companiesQuery = Company::with(['users'])->whereHas('users', function ($query) {
+            $companiesQuery = Company::with(['users', 'teams'])->whereHas('users', function ($query) {
                 $query->where('user_id', Auth::id());
-            });
+            })->withCount(['teams', 'employees']);
 
             // powerhuman.com/api/company?id=42
             if ($id) {

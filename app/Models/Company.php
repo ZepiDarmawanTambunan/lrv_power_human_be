@@ -35,4 +35,14 @@ class Company extends Model
     {
         return $this->hasMany(Role::class);
     }
+
+    public function employees()
+    {
+        return $this->hasManyThrough(
+            Employee::class,
+            Team::class,
+            'company_id',
+            'team_id'
+        );
+    }
 }
